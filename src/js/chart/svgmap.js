@@ -1,7 +1,3 @@
-<svg width="800" height="600" style="background-color: white;"></svg>
-
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script>
   const svg = d3.select("svg");
 
   // 지도 projection을 설정합니다.
@@ -32,4 +28,3 @@
               d3.select(this).style("fill", "red");
             });
   });
-</script>

@@ -1,7 +1,3 @@
-
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-<h1>Network Chart</h1>
-<script>
   const nodes = [
     { id: '코로나19', group: 0, radius: 75 },
     { id: '백신', group: 1, radius: 50 },
@@ -88,19 +84,3 @@
             .attr('x', d => d.x)
             .attr('y', d => d.y + 5); // Y 위치를 조정합니다.
   });
-</script>
-
-
-  <style>
-    svg {
-          background-color: #fff;
-  }
-    .link {
-    stroke: #999;
-    stroke-opacity: 0.6;
-  }
-    .node {
-    stroke: #fff;
-    stroke-width: 1.5px;
-  }
-  </style>

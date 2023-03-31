@@ -6,6 +6,9 @@ const path = require("path");
 // Create Express app instance
 const app = express();
 
+const favicon = require('serve-favicon');
+app.use(favicon(__dirname + '/favicon.ico'));
+
 // Set static directory
 app.use(express.static(path.join(__dirname, "src")));
 

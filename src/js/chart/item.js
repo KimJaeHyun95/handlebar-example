@@ -1,6 +1,3 @@
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<h1>Just Chart</h1>
-<script>
   const nodes = [
     { id: 'A', group: 1 },
     { id: 'B', group: 1 },
@@ -102,17 +99,3 @@
     d.fx = null;
     d.fy = null;
   }
-</script>
-  <style>
-    svg {
-      background-color: #ccc;
-    }
-    .link {
-    stroke: #999;
-    stroke-opacity: 0.6;
-  }
-    .node {
-    stroke: #fff;
-    stroke-width: 1.5px;
-  }
-  </style>

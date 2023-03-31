@@ -1,8 +1,3 @@
-
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
-<h1>Word Cloud Example</h1>
-<script>
   // Sample data
   const words = [
     {text: "드라마", size: 150},
@@ -44,24 +39,21 @@
   function draw(words) {
     // Create an SVG element
     const svg = d3.select("body").append("svg")
-            .attr("width", wc_width)
-            .attr("height", wc_height);
+        .attr("width", wc_width)
+        .attr("height", wc_height);
 
-    // Add words to the word cloud
+// Add words to the word cloud
     svg.append("g")
-            .attr("transform", `translate(${wc_width / 2}, ${wc_height / 2})`)
-            .selectAll("text")
-            .data(words)
-            .enter().append("text")
-            .style("font-size", d => `${d.size}px`)
-            .style("fill", (d, i) => d3.schemeCategory10[i % 10])
-            .attr("text-anchor", "middle")
-            .attr("transform", d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
-            .text(d => d.text);
+        .attr("transform", `translate(${wc_width / 2}, ${wc_height / 2})`)
+        .selectAll("text")
+        .data(words)
+        .enter().append("text")
+        .style("font-size", d => `${d.size}px`)
+        .style("fill", (d, i) => d3.schemeCategory10[i % 10])
+        .attr("text-anchor", "middle")
+        .attr("transform", d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
+        .text(d => d.text)
+        .on("click", d =>
+            console.log(d.srcElement.__data__.text)
+        );
   }
-</script>
-<style>
-  svg {
-    background-color: #fff;
-  }
-</style>

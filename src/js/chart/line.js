@@ -1,9 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<h1>Line Chart</h1>
-<div class="wrapper">
-  <canvas id="lineChart" style="max-width: 800px; max-height: 350px">></canvas>
-</div>
-<script>
 
   const labels = [1,2,3,4,5];
 
@@ -45,15 +39,8 @@
       }
     }
   };
-</script>
-<script>
+
   const lineChart = new Chart(
           document.getElementById('lineChart'),
           config
   );
-</script>
-<style>
-  #lineChart {
-    background-color: #fff;
-  }
-</style>

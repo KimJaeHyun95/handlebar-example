@@ -1,10 +1,3 @@
-<h1>openstreetmap</h1>
-<div id="map" style="width: 600px; height: 500px;"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
-
-<script>
   // 지도 생성 및 초기 설정
   var map = L.map('map').setView([37.5665, 126.9780], 11);
 
@@ -30,11 +23,3 @@
           .then(data => {
             seoulBoundaries.addData(data);
           });
-</script>
-
-<style>
-  #map {
-    width: 500px;
-    height: 400px;
-  }
-</style>

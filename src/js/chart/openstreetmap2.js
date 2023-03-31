@@ -1,9 +1,3 @@
-<!-- openstreetmap 지도 생성 -->
-<h1>openstreetmap</h1>
-<div id="map" style="width: 600px; height: 500px;"></div>
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
-<script>
   // 지도 생성 및 초기 설정
   var map = L.map('map').setView([37.5665, 126.9780], 17); // [위도, 경도], 확대 비율 설정
   // openstreetmap 타일 레이어 추가
@@ -24,11 +18,3 @@
   // 팝업 추가
   cityhallMarker.bindPopup("<b>서울시청</b><br>서울특별시 중구 태평로1가 31"); // 마커 클릭시 팝업에 표시될 내용
   jongroMarker.bindPopup("<b>종로구청</b><br>서울특별시 종로구 통일로 246-20, 107동"); // 마커 클릭시 팝업에 표시될 내용
-</script>
-
-<style>
-  #map {
-    width: 500px;
-    height: 400px;
-  }
-</style>

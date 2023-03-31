@@ -1,8 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<h1>Pie Chart</h1>
-<canvas id="pieChart" style="max-width: 400px; max-height: 500px"></canvas>
-
-<script>
   // 차트 생성
   var ctx = document.getElementById("pieChart");
   const pieChart = new Chart(ctx, {
@@ -41,10 +36,3 @@
       }
     }
   });
-</script>
-
-<style>
-  #pieChart {
-    background-color: #fff;
-  }
-</style>
