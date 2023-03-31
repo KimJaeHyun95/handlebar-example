@@ -1,0 +1,41 @@
+<!-- click.hbs -->
+<button id="myButton" onclick="getData()">Click me</button>
+
+<br>
+
+<a style="color: white;" href="/bar">bar</a>
+<a style="color: white;" href="/item">item</a>
+<a style="color: white;" href="/line">line</a>
+<a style="color: white;" href="/pie">pie</a>
+<a style="color: white;" href="/waffle">waffle</a>
+<a style="color: white;" href="/network">network</a>
+<a style="color: white;" href="/openstreetmap">openstreetmap</a>
+<a style="color: white;" href="/svgmap">svgmap</a>
+<a style="color: white;" href="/wordcloud">wordcloud</a>
+
+<!-- 데이터 리스트 -->
+<ul id="dataList"></ul>
+
+<script src="/axios/axios.min.js"></script>
+<script>
+  function getData() {
+    // API 호출
+    axios
+            .get("https://jsonplaceholder.typicode.com/posts")
+            .then(function(response) {
+              console.log(response.data);
+
+              // 데이터 리스트를 생성
+              let dataList = "";
+              response.data.forEach(function(post) {
+                dataList += "<li>" + post.title + "</li>";
+              });
+
+              // 데이터 리스트를 출력
+              document.getElementById("dataList").innerHTML = dataList;
+            })
+            .catch(function(error) {
+              console.error(error);
+            });
+  }
+</script>
