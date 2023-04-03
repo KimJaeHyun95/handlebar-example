@@ -2,11 +2,19 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
+const axios = require('axios');
+const _ = require('lodash');
+
+global._ = _;
+global.axios = axios;
 
 // Create Express app instance
 const app = express();
 
 const favicon = require('serve-favicon');
+
+
+
 app.use(favicon(__dirname + '/favicon.ico'));
 
 // Set static directory
@@ -47,13 +55,32 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/:page", (req, res) => {
+app.get("/:page", async (req, res) => {
   const { page } = req.params;
+
   res.status(200).render(page, {
     path: page,
     style: "style",
   });
 });
+
+
+async function requestData() {
+  const param = {
+    key1: 'value1'
+  };
+  let result = 0;
+  await axios.post('http://localhost:8080/api/v1/external/test1', param)
+      .then(function (response) {
+        console.log(response.data);
+        result = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  return result
+}
 
 // Start the server
 app.listen(3000, () => {

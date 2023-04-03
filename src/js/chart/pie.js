@@ -1,5 +1,5 @@
   // 차트 생성
-  var ctx = document.getElementById("pieChart");
+  let ctx = document.getElementById("pieChart");
   const pieChart = new Chart(ctx, {
     type: 'pie',
     data: {

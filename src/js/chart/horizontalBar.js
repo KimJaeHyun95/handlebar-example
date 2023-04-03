@@ -1,6 +1,6 @@
 
   // 차트 생성
-  var ctx = document.getElementById("barChart");
+  let ctx = document.getElementById("barChart");
   const barChart = new Chart(ctx, {
     type: 'bar',
     data: {

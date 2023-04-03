@@ -1,15 +1,15 @@
   // 지도 생성 및 초기 설정
-  var map = L.map('map').setView([37.5665, 126.9780], 11);
+  let map = L.map('map').setView([37.5665, 126.9780], 11);
 
   // openstreetmap 타일 레이어 추가
-  var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  let osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
   });
   osmLayer.addTo(map);
 
   // 서울시 시군구 경계 레이어 추가
-  var seoulBoundaries = L.geoJSON(null, {
+  let seoulBoundaries = L.geoJSON(null, {
     style: {
       color: 'red', // 경계 색상
       weight: 2,
