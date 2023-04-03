@@ -1,25 +1,3 @@
-const myDiv = document.getElementById("myDiv");
-const value = myDiv.getAttribute("data-value");
-
-async function requestData() {
-  let result = 0;
-  await axios.post('http://localhost:8080/api/v1/external/test1', {})
-      .then(function (response) {
-        console.log(response.data);
-        result = response.data;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  return result
-}
-
-const arr = [1, 1, 2, 3, 3, 3, 4, 5, 5];
-console.log(arr)
-const uniqueArr = _.uniq(arr);
-console.log(uniqueArr); // [1, 2, 3, 4, 5]
-
 // 차트 생성
 let ctx = document.getElementById("barChart");
 const barChart = new Chart(ctx, {
