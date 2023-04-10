@@ -1,6 +1,37 @@
 <h1>Network Chart</h1>
 
+<div id="networkChart"></div>
+
 <script src="../js/chart/network.js"></script>
+<script>
+  const nodes =  [
+    { id: '코로나19', group: 0, radius: 75 },
+    { id: '백신', group: 1, radius: 50 },
+    { id: '금리', group: 2, radius: 50 },
+    { id: '소상공인', group: 3, radius: 50 },
+    { id: '항목1', group: 1, radius: 25 },
+    { id: '항목2', group: 1, radius: 25 },
+    { id: '항목3', group: 2, radius: 25 },
+    { id: '항목4', group: 2, radius: 25 },
+    { id: '항목5', group: 3, radius: 25 },
+    { id: '항목6', group: 3, radius: 25 }
+  ];
+
+  const links = [
+    { source: '코로나19', target: '백신' },
+    { source: '코로나19', target: '금리' },
+    { source: '코로나19', target: '소상공인' },
+    { source: '백신', target: '항목1' },
+    { source: '백신', target: '항목2' },
+    { source: '금리', target: '항목3' },
+    { source: '금리', target: '항목4' },
+    { source: '소상공인', target: '항목5' },
+    { source: '소상공인', target: '항목6' }
+  ];
+
+  createNetworkChart("networkChart", nodes, links);
+</script>
+
 
 <style>
   svg {

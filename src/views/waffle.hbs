@@ -4,6 +4,20 @@
 <div id="waffleChart"></div>
 
 <script src="../js/chart/waffle.js"></script>
+<script>
+  const waffleData = [
+    { name: 'Item A', value: 11, color: 'steelblue' },
+    { name: 'Item B', value: 12, color: 'lightblue' },
+    { name: 'Item C', value: 3, color: 'blue' },
+    { name: 'Item D', value: 24, color: 'darkblue' },
+    { name: 'Item E', value: 15, color: 'green' },
+    { name: 'Item F', value: 6, color: 'yellow' },
+    { name: 'Item G', value: 7, color: 'orange' },
+    { name: 'Item H', value: 22, color: 'red' }
+  ];
+
+  createWaffleChart("waffleChart", waffleData);
+</script>
 
 <style>
     #waffleChart {
