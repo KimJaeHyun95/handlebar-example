@@ -25,33 +25,33 @@ function createWordCloud(containerId, words) {
         .attr("height", wc_height);
     // Add words to the word cloud
     svg
-        .append("g")
-        .attr(
-            "transform",
-            `translate(${
-                wc_width / 2
-            }, ${
-                wc_height / 2
-            })`
-        )
-        .selectAll("text")
-        .data(words)
-        .enter()
-        .append("text")
-        .style("font-size", d => `${
-            d.size
-        }px`)
-        .style("fill", (d, i) => d3.schemeCategory10[i % 10])
-        .attr("text-anchor", "middle")
-        .attr("transform", d => `translate(${
-            [d.x, d.y]
-        })rotate(${
-            d.rotate
-        })`)
-        .text(d => d.text)
-        .on("click", d => console.log(d
-            .srcElement
-            .__data__
-            .text));
+      .append("g")
+      .attr(
+          "transform",
+          `translate(${
+              wc_width / 2
+          }, ${
+              wc_height / 2
+          })`
+      )
+      .selectAll("text")
+      .data(words)
+      .enter()
+      .append("text")
+      .style("font-size", d => `${
+          d.size
+      }px`)
+      .style("fill", (d, i) => d3.schemeCategory10[i % 10])
+      .attr("text-anchor", "middle")
+      .attr("transform", d => `translate(${
+          [d.x, d.y]
+      })rotate(${
+          d.rotate
+      })`)
+      .text(d => d.text)
+      .on("click", function(d) {
+        // d3에서 this 이용 가능
+        console.log(this.textContent);
+      });
   }
 }
