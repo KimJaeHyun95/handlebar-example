@@ -1,6 +1,34 @@
 <h1>Word Cloud Example</h1>
 
+<div id="word-cloud-container"></div>
+
 <script src="../js/chart/wordcloud.js"></script>
+<script>
+  const words = [
+    {text: "드라마", size: 150},
+    {text: "예능", size: 120},
+    {text: "뉴스", size: 75},
+    {text: "스포츠", size: 60},
+    {text: "오늘의 날씨", size: 60},
+    {text: "금융", size: 60},
+    {text: "패션", size: 60},
+    {text: "커피", size: 60},
+    {text: "맥주", size: 60},
+    {text: "음식", size: 55},
+    {text: "유튜브", size: 55},
+    {text: "배달 음식", size: 55},
+    {text: "쿠팡", size: 45},
+    {text: "중고나라", size: 45},
+    {text: "자격증", size: 45},
+    {text: "일자리", size: 45},
+    {text: "전기차", size: 45},
+    {text: "산책로", size: 45},
+    {text: "바람과 구름과 비", size: 35},
+    {text: "신입생 대학 생활", size: 35},
+  ];
+
+  createWordCloud("word-cloud-container", words);
+</script>
 
 <style>
   svg {
