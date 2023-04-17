@@ -33,5 +33,5 @@ function createWaffleChart(chartId, waffleData) {
       })
       .on('mouseout', function () {
         tooltip.style("display", "none");
-      });;
+      });
 }

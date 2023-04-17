@@ -1,13 +1,8 @@
 <h1>Bar Chart</h1>
 <div class="wrapper">
-  <canvas id="barChart1" style="max-width: 800px; max-height: 350px; background-color: white;"></canvas>
-  <br>
-  <canvas id="barChart2" style="max-width: 800px; max-height: 350px; background-color: white;"></canvas>
+  <canvas id="stackedBarChart" style="max-width: 800px; max-height: 350px; background-color: white;"></canvas>
 </div>
 
-<div id="myDiv" data-value="http://localhost:8080/api/v1/external/test1"></div>
-
-{{> test title="변수전달도 잘됩니다." item="1234123" }}
 
 <script src="../js/chart/bar.js"></script>
 <script>
@@ -20,7 +15,8 @@
       borderWidth: 1,
       hoverBackgroundColor: "rgba(75,192,192,0.6)",
       hoverBorderColor: "rgba(75,192,192,1)",
-      data: [65, 59, 80, 81, 56, 55]
+      data: [65, 59, 80, 81, 56, 55],
+      stack: 'stack1' // Stack group identifier
     },
       {
         label: "Sales2",
@@ -29,7 +25,8 @@
         borderWidth: 1,
         hoverBackgroundColor: "rgba(75,192,192,0.6)",
         hoverBorderColor: "rgba(75,192,192,1)",
-        data: [54, 50, 43, 34, 23, 12]
+        data: [54, 50, 43, 34, 23, 12],
+        stack: 'stack1' // Stack group identifier
       },
       {
         label: "Sales3",
@@ -38,12 +35,12 @@
         borderWidth: 1,
         hoverBackgroundColor: "rgba(75,192,192,0.6)",
         hoverBorderColor: "rgba(75,192,192,1)",
-        data: [12, 23, 45, 56, 67, 76]
+        data: [12, 23, 45, 56, 67, 76],
+        stack: 'stack2' // Stack group identifier
       }],
   };
 
-  createBarChart("barChart1", chartData)
-  createBarChart("barChart2", chartData)
+  createStavkedBarChart("stackedBarChart", chartData)
 </script>
 
 <style>

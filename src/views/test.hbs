@@ -1,0 +1,61 @@
+<h3>AJAX TEST</h3>
+
+<div id="test"></div>
+
+<a onclick="getData()">getData</a>
+<script>
+  function getData(){
+    // ajaxTable이 있으면 제거
+    $('#ajaxTable').remove();
+
+    // ajax 통신
+    $.ajax({
+      type : "POST", // HTTP method type(GET, POST) 형식이다.
+      url : "http://localhost:8080/api/v1/external/test", // Json 형식의 데이터이다.
+      data: JSON.stringify({
+        key1: 'value1',
+        key2: 'value2',
+        // 기타 필요한 데이터
+      }),
+      contentType: "application/json", // JSON 형식의 데이터를 보내기 위한 옵션,
+      success : async function(res) { // 비동기통신의 성공일경우 success콜백으로 들어옵니다. 'res'는 응답받은 데이터이다.
+        // 응답코드 > 0000
+        console.log(res);
+
+        // Create table element
+        var table = $('<table border="1" id="ajaxTable"></table>');
+
+        // Add header row
+        var headerRow = $('<tr></tr>');
+        headerRow.append('<th>Key1</th>');
+        headerRow.append('<th>Key2</th>');
+        table.append(headerRow);
+
+        // Add data rows
+        for (var i = 0; i < res.length; i++) {
+          var dataRow = $('<tr></tr>');
+          dataRow.append('<td>' + res[i].key1 + '</td>');
+          dataRow.append('<td>' + res[i].key2 + '</td>');
+          table.append(dataRow);
+        }
+
+        // Append table to the 'test' div
+        await $('#test').append(table);
+      },
+      error : function(XMLHttpRequest, textStatus, errorThrown) { // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+        alert("통신 실패.");
+      },
+      complete: function () {
+        // setTimeout을 사용하여 complete 콜백을 지연시킵니다.
+        setTimeout(function() {
+          alert(1);
+        }, 5);
+      }
+    });
+  }
+
+  // 페이지 진입시 함수 실행
+  $(document).ready(function() {
+    getData();
+  });
+</script>
